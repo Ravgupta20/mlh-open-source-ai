@@ -14,15 +14,25 @@ build on it.
 
 ### Local (Ollama)
 
+1. **Install Ollama first.** Download it from https://ollama.com/download and run
+   the installer (Windows, Mac, Linux). Then open a new terminal and check it
+   worked: `ollama --version`.
+2. **Download a model** (2.5 GB, so do this on good Wi-Fi), then try it:
+
 ```
-ollama pull qwen3:4b        # 2.5 GB, do this on good Wi-Fi
+ollama pull qwen3:4b
+ollama run qwen3:4b         # chat in the terminal; type /bye to quit
+```
+
+3. **Run the Python example:**
+
+```
 pip install -r requirements.txt
 python hello_ollama.py
 ```
 
-Get Ollama from https://ollama.com. Other models to try: `gemma4:e4b`,
-`qwen3:1.7b` (smaller), `qwen2.5-coder:7b` (code). Rule of thumb: 8 GB RAM runs
-about a 4B model, 16 GB runs 7 to 8B.
+Other models to try: `gemma4:e4b`, `qwen3:1.7b` (smaller), `qwen2.5-coder:7b`
+(code). Rule of thumb: 8 GB RAM runs about a 4B model, 16 GB runs 7 to 8B.
 
 ### Hosted (any OpenAI-compatible endpoint)
 
