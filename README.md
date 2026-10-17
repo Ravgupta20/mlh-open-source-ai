@@ -1,4 +1,4 @@
-# Open AI Starter
+# MLH Open Source AI
 
 The smallest working setup for talking to an open-weight AI model, locally or
 through a hosted endpoint. Made for the Hacktoberfest Hack Day, Bethesda x
