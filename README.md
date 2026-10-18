@@ -27,11 +27,19 @@ On Mac/Linux try `python3 --version`. On Windows try `py --version`.
 **Not found, or older than 3.10?** Install it from https://www.python.org/downloads/.
 On Windows, tick **Add python.exe to PATH** in the installer, then open a new terminal.
 
-If `pip` or `python` doesn't work later, use these forms instead:
+**`python` says "not found" or "not recognized"?** Your computer may call it something
+else. Try these, and use whichever one prints a version:
+
+| Your computer | Use this instead of `python` | And this instead of `pip` |
+|---|---|---|
+| Mac / Linux | `python3` | `python3 -m pip` |
+| Windows | `py` | `py -m pip` |
+
+Then use that name everywhere in this guide. For example, on Windows:
 
 ```
-python -m pip install ...      # instead of: pip install ...
-python3 ...   or   py ...      # instead of: python ...
+py -m pip install -r requirements.txt
+py hello_ollama.py
 ```
 
 ## Step 2: Get the code
@@ -39,8 +47,10 @@ python3 ...   or   py ...      # instead of: python ...
 ```
 git clone https://github.com/Ravgupta20/mlh-open-source-ai
 cd mlh-open-source-ai
-pip install -r requirements.txt
+python -m pip install -r requirements.txt
 ```
+
+(Use `python3` or `py` here if `python` didn't work in Step 1.)
 
 No git? On the repo page choose **Code, Download ZIP**, unzip it, and open a
 terminal in that folder.
@@ -67,6 +77,8 @@ Type `/bye` to quit. This works even if you skip Python.
 ```
 python hello_ollama.py
 ```
+
+(`python3` or `py` if that's what worked in Step 1.)
 
 Other models: `gemma4:e4b` (bigger, better), `qwen3:4b`, `qwen3:1.7b` (smaller).
 `gemma4:e2b` is Google's small open model and fits a laptop with 8 GB of RAM.
@@ -114,8 +126,8 @@ Then find your symptom:
 
 | Symptom | Fix |
 |---|---|
-| `python` or `pip` not found | Install Python (Step 1). On Windows tick Add to PATH, then open a new terminal. |
-| `ModuleNotFoundError: ollama` or `openai` | Run `python -m pip install -r requirements.txt` with the same Python you run scripts with. |
+| `python` or `pip` "not found" or "not recognized" | Try `python3` (Mac/Linux) or `py` (Windows) instead of `python`, and `python3 -m pip` or `py -m pip` instead of `pip`. Still nothing? Install Python (Step 1), tick Add to PATH on Windows, and open a new terminal. |
+| `ModuleNotFoundError: ollama` or `openai` | Run `python -m pip install -r requirements.txt` (or `python3 -m pip ...` / `py -m pip ...`), using the same Python you run the scripts with. |
 | Connection refused on port 11434 | Ollama isn't running. Open the Ollama app, or run `ollama serve`. |
 | Model not found | Run `ollama pull gemma4:e2b`, then `ollama list` to check. |
 | Very slow, or the computer freezes | Model too big for your RAM. Try `qwen3:1.7b`, or go hosted. |
