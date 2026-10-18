@@ -12,6 +12,29 @@ build on it.
    - Less RAM, or you don't want a big download: use a hosted endpoint (Hosted).
 2. **Check your setup any time:** `python check_setup.py` tells you what to fix.
 
+### Before you start: Python and the code
+
+You need Python 3.10 or newer (pip comes with it) and this repo's files.
+
+1. **Check if you have Python.** In a terminal run `python --version`. On Mac/Linux
+   try `python3 --version`; on Windows try `py --version`. Seeing 3.10 or higher
+   means you're set. If the command isn't found, or the version is older:
+   - Install it from https://www.python.org/downloads/. **On Windows, tick
+     "Add python.exe to PATH" in the installer**, then open a new terminal.
+   - Check pip with `python -m pip --version` (use `python3` or `py` if that's
+     what worked above). If pip says it's missing, run `python -m ensurepip`.
+   - Use `python -m pip install ...` instead of bare `pip install ...`, and
+     `python3` or `py` instead of `python` if that's what works on your computer.
+2. **Get the files.** Either `git clone https://github.com/Ravgupta20/mlh-open-source-ai`
+   and `cd mlh-open-source-ai`, or on the repo page choose Code, Download ZIP, unzip,
+   and open a terminal in that folder.
+3. **Optional: use a virtual environment** so installs stay tidy:
+   `python -m venv .venv`, then activate it (`.venv\Scriptsctivate` on Windows,
+   `source .venv/bin/activate` on Mac/Linux).
+
+No Python at all? You can still chat with a local model: install Ollama and run
+`ollama run qwen3:4b` (see below). The Python examples are for building your own app.
+
 ### Local (Ollama)
 
 1. **Install Ollama first.** Download it from https://ollama.com/download and run
@@ -74,7 +97,7 @@ Then match your symptom:
 | `404` | Wrong `BASE_URL` or `MODEL`. For Ollama the URL must end in `/v1`. |
 | `429` or "credits used up" | Free tier exhausted. Wait, switch provider, or run local. |
 | `ModuleNotFoundError: ollama` or `openai` | `pip install -r requirements.txt`, in the same Python you run the script with. |
-| `pip` not found | Try `python -m pip install -r requirements.txt` (or `python3`). |
+| `pip` or `python` not found | See "Before you start". Install Python (tick "Add to PATH" on Windows), open a new terminal, and use `python -m pip install -r requirements.txt` (or `python3` / `py`). |
 | Download crawls | Shared Wi-Fi. Use a phone hotspot, or start the download at home. |
 
 Tip: the OpenAI-style call works with Ollama, Hugging Face and many others. Write

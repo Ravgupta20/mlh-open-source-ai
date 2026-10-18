@@ -26,7 +26,7 @@ def check_python():
     if v >= (3, 10):
         print(f"{OK}  Python {v.major}.{v.minor}")
     else:
-        print(f"{BAD}  Python {v.major}.{v.minor} is too old. Install Python 3.10 or newer.")
+        print(f"{BAD}  Python {v.major}.{v.minor} is too old. Install Python 3.10 or newer from https://www.python.org/downloads/ (Windows: tick Add to PATH).")
 
 
 def check_ollama(model):
