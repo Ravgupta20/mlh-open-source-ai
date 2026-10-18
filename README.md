@@ -47,7 +47,7 @@ py hello_ollama.py
 ```
 git clone https://github.com/Ravgupta20/mlh-open-source-ai
 cd mlh-open-source-ai
-python -m pip install -r requirements.txt
+pip install -r requirements.txt
 ```
 
 (Use `python3` or `py` here if `python` didn't work in Step 1.)
