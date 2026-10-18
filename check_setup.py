@@ -29,6 +29,9 @@ def check_python():
     else:
         print(f"{BAD}  Python {v.major}.{v.minor} is too old. Install Python 3.10 or newer from https://www.python.org/downloads/ (Windows: tick Add to PATH).")
     print(f"      Running: {sys.executable}")
+    if importlib.util.find_spec("pip") is None:
+        print(f"{BAD}  This Python has no pip. Add it, then rerun this check:")
+        print(f'      "{sys.executable}" -m ensurepip --upgrade')
     missing = [m for m in ("ollama", "openai") if importlib.util.find_spec(m) is None]
     if missing:
         print(f"{BAD}  Not installed for this Python: {', '.join(missing)}.")

@@ -139,6 +139,7 @@ Then find your symptom:
 | Symptom | Fix |
 |---|---|
 | `python` or `pip` "not found" or "not recognized" | Try `python3` (Mac/Linux) or `py` (Windows) instead of `python`, and `python3 -m pip` or `py -m pip` instead of `pip`. Still nothing? Install Python (Step 1), tick Add to PATH on Windows, and open a new terminal. |
+| `No module named pip` | That Python was installed without pip. Run `py -m ensurepip --upgrade` (Windows) or `python3 -m ensurepip --upgrade` (Mac/Linux), then `py -m pip install -r requirements.txt` again. |
 | `ModuleNotFoundError: No module named 'ollama'` (or `openai`) | You installed the packages into a different Python than the one running the script. Install with the same name you run with: `py -m pip install -r requirements.txt` (Windows) or `python3 -m pip install -r requirements.txt` (Mac/Linux). Avoid bare `pip`. `python check_setup.py` prints the exact command for the Python you're using. |
 | Connection refused on port 11434 | Ollama isn't running. Open the Ollama app, or run `ollama serve`. |
 | Model not found | Run `ollama pull gemma4:e2b`, then `ollama list` to check. |
