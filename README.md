@@ -78,7 +78,7 @@ ollama run gemma4:e2b
 You'll see a `>>>` prompt. Type a question and press Enter, for example:
 
 ```
->>> Give me three fun facts about Montgomery County, MD.
+>>> Explain what an open-weight AI model is in two sentences.
 ```
 
 The first answer can take a minute while the model loads into memory. Later answers

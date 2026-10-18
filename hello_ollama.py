@@ -7,6 +7,6 @@ import ollama
 
 reply = ollama.chat(
     model="gemma4:e2b",
-    messages=[{"role": "user", "content": "Give me three fun facts about Montgomery County, MD."}],
+    messages=[{"role": "user", "content": "Explain what an open-weight AI model is in two sentences."}],
 )
 print(reply["message"]["content"])
