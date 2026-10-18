@@ -33,18 +33,18 @@ You need Python 3.10 or newer (pip comes with it) and this repo's files.
    `source .venv/bin/activate` on Mac/Linux).
 
 No Python at all? You can still chat with a local model: install Ollama and run
-`ollama run qwen3:4b` (see below). The Python examples are for building your own app.
+`ollama run gemma4:e2b` (see below). The Python examples are for building your own app.
 
 ### Local (Ollama)
 
 1. **Install Ollama first.** Download it from https://ollama.com/download and run
    the installer (Windows, Mac, Linux). Then open a new terminal and check it
    worked: `ollama --version`.
-2. **Download a model** (2.5 GB, so do this on good Wi-Fi), then try it:
+2. **Download a model** (about 4 GB, so do this on good Wi-Fi, ideally at home), then try it:
 
 ```
-ollama pull qwen3:4b
-ollama run qwen3:4b         # chat in the terminal; type /bye to quit
+ollama pull gemma4:e2b
+ollama run gemma4:e2b         # chat in the terminal; type /bye to quit
 ```
 
 3. **Run the Python example:**
@@ -54,8 +54,8 @@ pip install -r requirements.txt
 python hello_ollama.py
 ```
 
-Other models to try: `gemma4:e4b`, `qwen3:1.7b` (smaller), `qwen2.5-coder:7b`
-(code). Rule of thumb: 8 GB RAM runs about a 4B model, 16 GB runs 7 to 8B.
+Other models to try: `gemma4:e4b` (bigger, better), `qwen3:4b`, `qwen3:1.7b` (smaller), `qwen2.5-coder:7b`
+(code). `gemma4:e2b` is Google's small open model and runs on a laptop with 8 GB of RAM. Rule of thumb: 8 GB RAM runs a 2 to 4B model, 16 GB runs 7 to 8B.
 
 ### Hosted (any OpenAI-compatible endpoint)
 
@@ -66,7 +66,7 @@ providers without touching the code. It defaults to local Ollama.
 |---|---|---|
 | `BASE_URL` | `http://localhost:11434/v1` | `https://router.huggingface.co/v1` |
 | `API_KEY` | `ollama` (any text) | your token from huggingface.co/settings/tokens |
-| `MODEL` | `qwen3:4b` | a model id from huggingface.co/models |
+| `MODEL` | `gemma4:e2b` | a model id from huggingface.co/models |
 
 ```
 pip install -r requirements.txt

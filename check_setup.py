@@ -82,7 +82,7 @@ def check_hosted():
 
 if __name__ == "__main__":
     p = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
-    p.add_argument("--model", default="qwen3:4b")
+    p.add_argument("--model", default="gemma4:e2b")
     p.add_argument("--hosted", action="store_true")
     a = p.parse_args()
     check_python()
