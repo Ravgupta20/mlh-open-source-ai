@@ -35,7 +35,7 @@ else. Try these, and use whichever one prints a version:
 | Mac / Linux | `python3` | `python3 -m pip` |
 | Windows | `py` | `py -m pip` |
 
-Then use that name everywhere in this guide. For example, on Windows:
+Then use that name everywhere in this guide, for both installing and running, and always write `-m pip` instead of bare `pip`. Computers with two Pythons install into one and run the other. For example, on Windows:
 
 ```
 py -m pip install -r requirements.txt
@@ -139,7 +139,7 @@ Then find your symptom:
 | Symptom | Fix |
 |---|---|
 | `python` or `pip` "not found" or "not recognized" | Try `python3` (Mac/Linux) or `py` (Windows) instead of `python`, and `python3 -m pip` or `py -m pip` instead of `pip`. Still nothing? Install Python (Step 1), tick Add to PATH on Windows, and open a new terminal. |
-| `ModuleNotFoundError: ollama` or `openai` | Run `python -m pip install -r requirements.txt` (or `python3 -m pip ...` / `py -m pip ...`), using the same Python you run the scripts with. |
+| `ModuleNotFoundError: No module named 'ollama'` (or `openai`) | You installed the packages into a different Python than the one running the script. Install with the same name you run with: `py -m pip install -r requirements.txt` (Windows) or `python3 -m pip install -r requirements.txt` (Mac/Linux). Avoid bare `pip`. `python check_setup.py` prints the exact command for the Python you're using. |
 | Connection refused on port 11434 | Ollama isn't running. Open the Ollama app, or run `ollama serve`. |
 | Model not found | Run `ollama pull gemma4:e2b`, then `ollama list` to check. |
 | Very slow, or the computer freezes | Model too big for your RAM. Try `qwen3:1.7b`, or go hosted. |

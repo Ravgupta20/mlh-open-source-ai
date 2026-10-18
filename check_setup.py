@@ -5,6 +5,7 @@
   python check_setup.py --hosted         also test the hosted endpoint from BASE_URL, API_KEY, MODEL
 """
 import argparse
+import importlib.util
 import json
 import os
 import sys
@@ -27,6 +28,14 @@ def check_python():
         print(f"{OK}  Python {v.major}.{v.minor}")
     else:
         print(f"{BAD}  Python {v.major}.{v.minor} is too old. Install Python 3.10 or newer from https://www.python.org/downloads/ (Windows: tick Add to PATH).")
+    print(f"      Running: {sys.executable}")
+    missing = [m for m in ("ollama", "openai") if importlib.util.find_spec(m) is None]
+    if missing:
+        print(f"{BAD}  Not installed for this Python: {', '.join(missing)}.")
+        print("      Install them for THIS Python (not a different one), then rerun:")
+        print(f'      "{sys.executable}" -m pip install -r requirements.txt')
+    else:
+        print(f"{OK}  ollama and openai Python packages are installed")
 
 
 def check_ollama(model):
