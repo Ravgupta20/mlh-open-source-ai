@@ -125,16 +125,6 @@ Then find your symptom:
 | `429` or "credits used up" | Free tier is empty. Wait, switch provider, or run Local. |
 | Download crawls | Shared Wi-Fi. Use a phone hotspot, or start it at home. |
 
-## Hackathon notes
-
-- **Prizes:** Best Open-Source AI Project runs at every Hack Day. "Best Use of
-  Gemma 4" needs a Gemma model through the Gemini API (Gemma in Ollama doesn't
-  count). Confirm the other challenges at kickoff.
-- **Submit** by pencils-down on the event page (Challenges, Add Submission): project
-  name, one-line description, repo link.
-- **Your repo** needs a license and a README that names the model you used.
-- **Help:** ask in `#moco-general` on the Code & Coffee Discord, or find a host.
-
 ## Files
 
 | File | What it does |
