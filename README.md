@@ -63,16 +63,28 @@ terminal in that folder.
 ollama --version
 ```
 
-**2. Download a model** (about 4 GB) and chat with it in the terminal:
+**2. Download the model** (about 4 GB, a few minutes on good Wi-Fi):
 
 ```
 ollama pull gemma4:e2b
+```
+
+**3. Chat with it** in the terminal:
+
+```
 ollama run gemma4:e2b
 ```
 
-Type `/bye` to quit. This works even if you skip Python.
+You'll see a `>>>` prompt. Type a question and press Enter, for example:
 
-**3. Call it from Python:**
+```
+>>> Give me three fun facts about Montgomery County, MD.
+```
+
+The first answer can take a minute while the model loads into memory. Later answers
+are faster. When you're done, type `/bye` to quit. This step works even if you skip Python.
+
+**4. Call it from Python:**
 
 ```
 python hello_ollama.py
