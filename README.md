@@ -29,7 +29,7 @@ You need Python 3.10 or newer (pip comes with it) and this repo's files.
    and `cd mlh-open-source-ai`, or on the repo page choose Code, Download ZIP, unzip,
    and open a terminal in that folder.
 3. **Optional: use a virtual environment** so installs stay tidy:
-   `python -m venv .venv`, then activate it (`.venv\Scriptsctivate` on Windows,
+   `python -m venv .venv`, then activate it (`.venv\Scripts\activate` on Windows,
    `source .venv/bin/activate` on Mac/Linux).
 
 No Python at all? You can still chat with a local model: install Ollama and run
